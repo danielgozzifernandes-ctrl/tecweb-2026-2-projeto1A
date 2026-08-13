@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Get-it</title>
+</head>
+
+<body>
+    <img
+        src="img/logo-getit.png"
+        alt="Logo Get-it"
+    >
+
+    <h1>Get-it</h1>
+
+    <p>
+        Como o Post-it, mas com outro verbo
+    </p>
+
+    <ul>
+        {notes}
+    </ul>
+
+    <form method="POST" action="/">
+        <label>
+            Título
+            <input type="text" name="titulo" required>
+        </label>
+
+        <label>
+            Detalhes
+            <input type="text" name="detalhes" required>
+        </label>
+
+        <button type="submit">Adicionar anotação</button>
+    </form>
+</body>
+</html>
