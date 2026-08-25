@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="240" height="240" role="img" aria-label="Anotação perdida">
+  <g transform="rotate(-6 120 120)">
+    <rect x="45" y="45" width="150" height="150" rx="6" fill="#000000" opacity="0.18" transform="translate(4 8)" />
+    <rect x="45" y="45" width="150" height="150" rx="6" fill="#fae890" />
+    <circle cx="97" cy="110" r="9" fill="#2c2c2c" />
+    <circle cx="143" cy="110" r="9" fill="#2c2c2c" />
+    <path d="M 95 158 Q 120 134 145 158" fill="none" stroke="#2c2c2c" stroke-width="8" stroke-linecap="round" />
+    <path d="M 62 72 L 96 72" stroke="#2c2c2c" stroke-width="6" stroke-linecap="round" opacity="0.35" />
+  </g>
+</svg>
