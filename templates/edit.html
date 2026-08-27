@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Get-it</title>
+    <title>Get-it - Editar anotação</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
@@ -25,7 +25,7 @@
     </div>
 
     <main class="container">
-      <form class="form-card" method="POST" action="/">
+      <form class="form-card" method="POST" action="/edit/{id}">
         {error}
 
         <input
@@ -38,14 +38,15 @@
         <textarea
           class="autoresize"
           name="detalhes"
+          rows="6"
           placeholder="Digite o conteúdo..."
         >{detalhes}</textarea>
-        <button class="btn" type="submit">Criar</button>
-      </form>
 
-      <div class="card-container">
-{notes}
-      </div>
+        <div class="form-actions">
+          <a class="btn btn-secondary" href="/">Cancelar</a>
+          <button class="btn" type="submit">Salvar</button>
+        </div>
+      </form>
     </main>
 
     <script type="text/javascript" src="/getit.js"></script>

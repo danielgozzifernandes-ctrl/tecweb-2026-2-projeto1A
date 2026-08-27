@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Get-it</title>
+    <title>Get-it - Apagar anotação</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
@@ -25,27 +25,23 @@
     </div>
 
     <main class="container">
-      <form class="form-card" method="POST" action="/">
-        {error}
+      <form class="form-card" method="POST" action="/delete/{id}">
+        <p class="confirm-question">Você realmente deseja apagar esta anotação?</p>
 
-        <input
-          class="form-card-title"
-          type="text"
-          name="titulo"
-          placeholder="Título"
-          value="{titulo}"
-        />
-        <textarea
-          class="autoresize"
-          name="detalhes"
-          placeholder="Digite o conteúdo..."
-        >{detalhes}</textarea>
-        <button class="btn" type="submit">Criar</button>
+        <div class="confirm-note">
+          <div class="card">
+            <h3 class="card-title">{title}</h3>
+            <div class="card-content">
+              <p>{content}</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <a class="btn btn-secondary" href="/">Não</a>
+          <button class="btn" type="submit">Sim</button>
+        </div>
       </form>
-
-      <div class="card-container">
-{notes}
-      </div>
     </main>
 
     <script type="text/javascript" src="/getit.js"></script>

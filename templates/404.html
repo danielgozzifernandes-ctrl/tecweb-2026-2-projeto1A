@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Get-it</title>
+    <title>Get-it - Página não encontrada</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
@@ -25,29 +25,18 @@
     </div>
 
     <main class="container">
-      <form class="form-card" method="POST" action="/">
-        {error}
+      <div class="page-message">
+        <img src="/img/nao-encontrado.svg" alt="Anotação perdida" />
 
-        <input
-          class="form-card-title"
-          type="text"
-          name="titulo"
-          placeholder="Título"
-          value="{titulo}"
-        />
-        <textarea
-          class="autoresize"
-          name="detalhes"
-          placeholder="Digite o conteúdo..."
-        >{detalhes}</textarea>
-        <button class="btn" type="submit">Criar</button>
-      </form>
+        <h1>Página não encontrada</h1>
 
-      <div class="card-container">
-{notes}
+        <p>
+          Parece que esta anotação caiu atrás da geladeira.<br />
+          O endereço que você acessou não existe no Get-it.
+        </p>
+
+        <a class="btn-link" href="/">Voltar para as anotações</a>
       </div>
     </main>
-
-    <script type="text/javascript" src="/getit.js"></script>
   </body>
 </html>
