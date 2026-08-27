@@ -167,31 +167,32 @@ textarea.autoresize::placeholder {
 
 /* Ações de cada anotação: favoritar, editar e apagar */
 
+.card-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.card-header .card-title {
+  flex-grow: 1;
+}
+
 .card-actions {
   display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-top: 14px;
+  flex-shrink: 0;
+  gap: 8px;
 }
 
 .card-action {
   font-family: "Roboto", sans-serif;
-  font-size: 13px;
+  font-size: 16px;
+  line-height: 1;
   color: #4c4c4c;
   text-decoration: none;
 }
 
 .card-action:hover {
   color: #2c2c2c;
-  text-decoration: underline;
-}
-
-.card-favorite {
-  margin-right: auto;
-  font-size: 20px;
-  line-height: 1;
-  text-decoration: none;
-  color: #4c4c4c;
 }
 
 /* Mensagem de erro da validação do formulário */

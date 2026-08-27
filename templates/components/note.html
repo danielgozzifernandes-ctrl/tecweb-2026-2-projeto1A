@@ -1,11 +1,13 @@
         <div class="card">
-          <h3 class="card-title">{title}</h3>
+          <div class="card-header">
+            <h3 class="card-title">{title}</h3>
+            <div class="card-actions">
+              <a class="card-action" href="/favorite/{id}" title="{favorite_title}">{favorite_icon}</a>
+              <a class="card-action" href="/edit/{id}" title="Editar">✎</a>
+              <a class="card-action" href="/delete/{id}" title="Apagar">🗑︎</a>
+            </div>
+          </div>
           <div class="card-content">
             <p>{content}</p>
-          </div>
-          <div class="card-actions">
-            <a class="card-favorite" href="/favorite/{id}" title="{favorite_title}">{favorite_icon}</a>
-            <a class="card-action" href="/edit/{id}">Editar</a>
-            <a class="card-action" href="/delete/{id}">Apagar</a>
           </div>
         </div>
