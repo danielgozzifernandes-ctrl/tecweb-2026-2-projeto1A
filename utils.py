@@ -2,6 +2,17 @@ import json
 from pathlib import Path
 
 
+CONTENT_TYPES = {
+    '.css': 'text/css',
+    '.js': 'text/javascript',
+    '.html': 'text/html; charset=utf-8',
+    '.json': 'application/json',
+    '.png': 'image/png',
+    '.svg': 'image/svg+xml',
+    '.ico': 'image/x-icon',
+}
+
+
 def extract_route(request):
     primeira_linha = request.split('\n')[0]
 
@@ -12,9 +23,28 @@ def extract_route(request):
     return rota[1:]
 
 
+def missing_body_length(request):
+    # O corpo tem o tamanho anunciado pelo cabeçalho Content-Length. Cabeçalho e
+    # corpo estão separados por duas quebras de linha.
+    cabecalho, _, corpo = request.replace('\r\n', '\n').partition('\n\n')
+
+    tamanho = 0
+    for linha in cabecalho.split('\n'):
+        if linha.lower().startswith('content-length:'):
+            tamanho = int(linha.split(':')[1])
+
+    return tamanho - len(corpo)
+
+
 def read_file(filepath):
     with open(filepath, 'rb') as arquivo:
         return arquivo.read()
+
+
+def content_type(filepath):
+    tipo = CONTENT_TYPES.get(filepath.suffix, 'application/octet-stream')
+
+    return f'Content-Type: {tipo}'
 
 
 def load_data(filename):
@@ -25,17 +55,6 @@ def load_data(filename):
         encoding='utf-8'
     ) as arquivo:
         return json.load(arquivo)
-
-
-def save_data(filename, data):
-    filepath = Path('data') / filename
-
-    with open(
-        filepath,
-        'w',
-        encoding='utf-8'
-    ) as arquivo:
-        json.dump(data, arquivo, ensure_ascii=False, indent=2)
 
 
 def load_template(filename):
